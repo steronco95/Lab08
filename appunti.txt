@@ -1,0 +1,16 @@
+INPUT : distanza percorsa minima (numero) 
+
+GRAFO: semplice, non orientato, pesato
+
+CONTENUTO GRAFO: 1.VERTICI : AREOPORTI 
+				 2.ARCHI : ROTTE DI AREOPORTI COLLEGATI DA ALMENO UN VOLO
+				 3.PESO : DISTANZA MEDIA PERCORSA TRA I DUE AREOPORTI (DISTANCE)
+
+
+FILTRI: aggiungo l'arco se e solo se la distanza media è > dell'input dato!
+
+
+OUTPUT: 1.NUMERO VERTICI (VERTEXSET.SIZE())
+		2.NUMERO ARCHI (EDGESET.SIZE())
+		3.ARCHI CON LA DISTANZA.
+				 

@@ -7,6 +7,10 @@ package it.polito.tdp.extflightdelays;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import org.jgrapht.Graph;
+import org.jgrapht.graph.DefaultWeightedEdge;
+
+import it.polito.tdp.extflightdelays.model.Airport;
 import it.polito.tdp.extflightdelays.model.Model;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -35,7 +39,35 @@ public class FXMLController {
 
     @FXML
     void doAnalizzaAeroporti(ActionEvent event) {
-    	//TODO
+    	
+    	int distMinima =0;
+    	txtResult.clear();
+    	
+    	try {
+    		
+    		distMinima = Integer.parseInt(distanzaMinima.getText());
+    	
+    		Graph<Airport,DefaultWeightedEdge> grafo = model.creaGrafo(distMinima);
+    		
+    		txtResult.appendText("numero di vertici: " + grafo.vertexSet().size() + "\n");
+    		txtResult.appendText("numero di archi: " + grafo.edgeSet().size() + "\n");
+    		
+    		StringBuffer result = new StringBuffer();
+    		for(DefaultWeightedEdge s : grafo.edgeSet()) {
+    			result.append(s.toString()).append("\n");
+    		}
+    		
+    		txtResult.appendText(result.toString());
+    		
+    		
+    		
+    	
+    	}catch(NumberFormatException e) {
+    		txtResult.appendText("inserire un valore numerico!");
+    		return;
+    	}
+    	
+    	
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete

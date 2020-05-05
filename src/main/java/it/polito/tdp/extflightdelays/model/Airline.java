@@ -60,6 +60,6 @@ public class Airline {
 
 	@Override
 	public String toString() {
-		return "Airline [id=" + id + ", iataCode=" + iataCode + ", airlineName=" + airlineName + "]";
+		return this.airlineName;
 	}
 }
