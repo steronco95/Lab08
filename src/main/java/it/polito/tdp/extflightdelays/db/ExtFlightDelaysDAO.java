@@ -79,7 +79,7 @@ public class ExtFlightDelaysDAO {
 			ResultSet rs = st.executeQuery();
 
 			while (rs.next()) {
-				Flight flight = new Flight(rs.getInt("ORIGIN_AIRPORT_ID"),rs.getInt("DESTINATION_AIRPORT_ID"),rs.getFloat("media"));
+				Flight flight = new Flight(rs.getInt("ORIGIN_AIRPORT_ID"),rs.getInt("DESTINATION_AIRPORT_ID"),rs.getDouble("media"));
 				result.add(flight);
 			}
 

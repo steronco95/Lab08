@@ -18,9 +18,9 @@ public class TestModel {
 //		
 //		
 //		
-		System.out.println(model.creaGrafo(700));
+		model.creaGrafo(3000);
 //		System.out.println(model.vertici());
-//		System.out.println(model.archi());
+		System.out.println(model.archi());
 //		System.out.println(model.archi().size());
 		
 		

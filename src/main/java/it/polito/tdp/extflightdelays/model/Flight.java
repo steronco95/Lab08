@@ -6,9 +6,9 @@ public class Flight {
 
 	private int areoportoPartenza;
 	private int areoportoArrivo;
-	private float distanzaMedia;
+	private double distanzaMedia;
 
-	public Flight(int partenza, int arrivo, float distMedia) {
+	public Flight(int partenza, int arrivo, double distMedia) {
 		
 		this.areoportoPartenza = partenza;
 		this.areoportoArrivo = arrivo;
@@ -32,7 +32,7 @@ public class Flight {
 		this.areoportoArrivo = areoportoArrivo;
 	}
 
-	public float getDistanzaMedia() {
+	public double getDistanzaMedia() {
 		return distanzaMedia;
 	}
 
@@ -40,6 +40,7 @@ public class Flight {
 		this.distanzaMedia = distanzaMedia;
 	}
 	
+	@Override
 	public String toString() {
 		
 		return this.areoportoPartenza + " " + this.areoportoArrivo + " " + this.distanzaMedia;

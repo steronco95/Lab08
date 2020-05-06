@@ -5,6 +5,7 @@
 package it.polito.tdp.extflightdelays;
 
 import java.net.URL;
+import java.util.Iterator;
 import java.util.ResourceBundle;
 
 import org.jgrapht.Graph;
@@ -18,7 +19,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-public class FXMLController {
+public class FXMLController extends DefaultWeightedEdge {
 
 	private Model model;
 	
@@ -38,7 +39,7 @@ public class FXMLController {
     private Button btnAnalizza; // Value injected by FXMLLoader
 
     @FXML
-    void doAnalizzaAeroporti(ActionEvent event) {
+    void doAnalizzaAeroporti(ActionEvent event)  {
     	
     	int distMinima =0;
     	txtResult.clear();
@@ -49,16 +50,19 @@ public class FXMLController {
     	
     		Graph<Airport,DefaultWeightedEdge> grafo = model.creaGrafo(distMinima);
     		
+    		if(grafo.edgeSet().size() == 0) {
+    			txtResult.appendText("La distanza inserita è troppo grande, non esistono areoporti che distano tra loro per piu di: " + distMinima + " miglia \n");
+    			txtResult.appendText("inserire una distanza minore!");
+    			return;
+    		}
+    		
     		txtResult.appendText("numero di vertici: " + grafo.vertexSet().size() + "\n");
     		txtResult.appendText("numero di archi: " + grafo.edgeSet().size() + "\n");
     		
-    		StringBuffer result = new StringBuffer();
-    		for(DefaultWeightedEdge s : grafo.edgeSet()) {
-    			result.append(s.toString()).append("\n");
-    		}
     		
-    		txtResult.appendText(result.toString());
     		
+
+    		return;
     		
     		
     	
