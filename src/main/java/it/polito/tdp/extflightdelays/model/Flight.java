@@ -2,7 +2,9 @@ package it.polito.tdp.extflightdelays.model;
 
 import java.time.LocalDateTime;
 
-public class Flight {
+import org.jgrapht.graph.DefaultWeightedEdge;
+
+public class Flight  extends DefaultWeightedEdge{
 
 	private int areoportoPartenza;
 	private int areoportoArrivo;

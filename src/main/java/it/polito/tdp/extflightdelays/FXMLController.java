@@ -59,7 +59,9 @@ public class FXMLController extends DefaultWeightedEdge {
     		txtResult.appendText("numero di vertici: " + grafo.vertexSet().size() + "\n");
     		txtResult.appendText("numero di archi: " + grafo.edgeSet().size() + "\n");
     		
-    		
+    		for(DefaultWeightedEdge s : grafo.edgeSet()) {
+    			txtResult.appendText(s.toString() + "\n");
+    		}
     		
 
     		return;
@@ -83,5 +85,17 @@ public class FXMLController extends DefaultWeightedEdge {
     
     public void setModel(Model model) {
     	this.model = model;
+    }
+   
+    @Override
+    public String toString() {
+    	
+    	String s = super.toString();
+    	
+    	
+    	s = s + " " + getWeight();
+    
+    	
+    	return s;
     }
 }
